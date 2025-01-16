@@ -1,19 +1,18 @@
 /* @provengo summon selenium */
 
-/**
- * This story opens a new browser window, goes to google.com, and searches for "Pizza".
- */
-bthread('Search', function () {
-  let s = new SeleniumSession('search').start(URL)
-  composeQuery(s, { text: 'Pizza' })
-  startSearch(s)
-})
+// Scenario: User buys an item from the store
+bthread('User buys an item from the store', function () {
+  let userSession = new SeleniumSession('user_session');
 
-/**
- * This story opens a new browser window, goes to google.com, and searches for "Pasta" using the "I Feel Lucky" feature.
- */
-bthread('Feeling lucky', function () {
-  let s = new SeleniumSession('lucky').start(URL)
-  composeQuery(s, { text: 'Pasta' })
-  feelLucky(s)
-})
+  // User logs in
+  userSession.start(URL)
+  goToLogin(userSession)
+  login(userSession, userDetails.user.email, userDetails.user.password)
+  addItemToCart(userSession)
+  proceedToCheckout(userSession)
+  // personalInformation(userSession, userDetails.user.firstName, userDetails.user.lastName, userDetails.user.email, userDetails.user.password, userDetails.user.birthdate)
+  addresses(userSession, userDetails.user.address, userDetails.user.city, userDetails.user.state, userDetails.user.zipCode, userDetails.user.country)
+  shippingMethod(userSession)
+  payment(userSession)
+  orderConfirmation(userSession)
+});
