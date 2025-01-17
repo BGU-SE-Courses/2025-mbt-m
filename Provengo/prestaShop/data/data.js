@@ -2,7 +2,7 @@
  *  This is a good place to put common test data, project-wide constants, etc.
  */
 
-const URL = 'http://localhost/stradivarious/en';
+const URL = 'http://localhost/stradivarious/';
 const ADMIN_URL = 'http://localhost/stradivarious/admin4150un9qxx4ji25cqkv/'
 
 const xpaths = {
@@ -31,14 +31,8 @@ const xpaths = {
   },
   cart: {
     proceedToCheckoutButton: "//body/main[1]/section[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/a[1]",
-    itemCounter: "//span[contains(@class, 'label js-subtotal')]"
   },
-  checkoutAdresses: {
-      address: "//input[@name=\"address1\"]",
-      city: "//input[@name=\"city\"]",
-      zipCode: "//input[@name=\"postcode\"]",
-      state: "//select[@name='id_state']",
-      country: "//select[@name=\"id_country\"]",
+  addresses: {
       continueButton: "//button[@name=\"confirm-addresses\"]"
   },
   shippingMethod: {
@@ -64,14 +58,6 @@ const xpaths = {
 
 const userDetails = {
   user: {
-    firstName: "John",
-    lastName: "Levi",
-    birthdate: "01/01/1990",
-    address: "3171 David Mission",
-    city: "West Emilytown",
-    state: "Michigan",
-    zipCode: "13289",
-    country: "United States",
     email: 'john@gmail.com',
     password: 'JohnLevi456'
   },
