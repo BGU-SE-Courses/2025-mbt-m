@@ -26,16 +26,21 @@ function proceedToCheckout(session){
 }
 
 function checkout(session){
-  sync({ request: Event('Start(checkout)', {StartEvent: true, session: session}) });
   with(session){
     click(xpaths.addresses.continueButton)
     click(xpaths.shippingMethod.continueButton)
     click(xpaths.payment.payByCashButton)
     click(xpaths.payment.confirmTerms)
+  }
+}
+
+function placeOrder(session){
+  sync({ request: Event('Start(placeOrder)', {StartEvent: true}) });
+  with(session){
     click(xpaths.payment.placeOrderButton)
     assertText(xpaths.orderConfirmation.successMessage, "YOUR ORDER IS CONFIRMED", TextAssertions.modifiers.Contains);
   }
-  sync({ request: Event('End(checkout)', {EndEvent: true, session: session}) });
+  sync({ request: Event('End(placeOrder)', {EndEvent: true}) });
 }
 
 function adminLogin(session){
@@ -55,11 +60,11 @@ function searchProduct(session){
 }
 
 function deleteProduct(session){
-  sync({ request: Event('Start(deleteProduct)', {StartEvent: true, session: session}) });
+  sync({ request: Event('Start(deleteProduct)', {StartEvent: true}) });
   with(session){
     click(xpaths.adminOperations.productOptions)
     click(xpaths.adminOperations.delete)
     click(xpaths.adminOperations.confirm)
   }
-  sync({ request: Event('End(deleteProduct)', {EndEvent: true, session: session}) });
+  sync({ request: Event('End(deleteProduct)', {EndEvent: true}) });
 }

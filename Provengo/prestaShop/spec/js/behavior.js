@@ -1,26 +1,26 @@
 /* @provengo summon selenium */
 
-let userSession = new SeleniumSession('user_session');
-let adminSession = new SeleniumSession('admin_session');
-
 bthread('buy product', function () {
-  userSession.start(URL)
-  userLogin(userSession)
-  addProductToCart(userSession)
-  proceedToCheckout(userSession)
-  checkout(userSession)
+  let s = new SeleniumSession('user_session');
+  s.start(URL)
+  userLogin(s)
+  addProductToCart(s)
+  proceedToCheckout(s)
+  checkout(s)
+  placeOrder(s)
 });
 
 bthread('delete product', function () {
-  adminSession.start(ADMIN_URL);
-  adminLogin(adminSession)
-  searchProduct(adminSession)
-  deleteProduct(adminSession)
+  let s = new SeleniumSession('admin_session');
+  s.start(ADMIN_URL);
+  adminLogin(s)
+  searchProduct(s)
+  deleteProduct(s)
 });
 
 bthread('correction', function () {
   sync({
-    WaitFor: Event('End(checkout)', {EndEvent: true, session: userSession}),
-    block: Event('Start(deleteProduct)', {StartEvent: true, session: adminSession})
+    waitFor: any('End(placeOrder)', {EndEvent: true}),
+    block: any('Start(deleteProduct)', {StartEvent: true})
   })
 })
