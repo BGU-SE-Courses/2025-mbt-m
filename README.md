@@ -19,7 +19,7 @@ cd PrestaShop
 3. Create a MySQL database and configure PrestaShop to use it.
 
 4. Install PrestaShop by following the setup wizard.
-   If you're having trouble in the installation, check this [video](https://www.youtube.com/watch?v=PypN1d6xHq0&t=544s) out.
+   If you're having trouble with the installation, check out this [video](https://www.youtube.com/watch?v=PypN1d6xHq0&t=544s).
 
 5. Install the desired ChromeDriver from this [link](https://developer.chrome.com/docs/chromedriver/downloads?hl=he).
    The ChromeDriver should be compatible to your current Chrome browser version.
