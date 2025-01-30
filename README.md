@@ -52,16 +52,3 @@ Each of the testing methods is elaborated in its own directory.
 
 ## Results
 We conducted tests using both Cucumber and Provengo. The generated test suites covered the primary interactions of the selected user stories. The tests are documented in the corresponding directories.
-
-## Detected Bugs
-We detected the following bugs:
-
-1. Bug 1: 
-   1. General description: ...
-   2. Steps to reproduce: ...
-   3. Expected result: ...
-   4. Actual result: ...
-   5. Link to the bug report: (you are encouraged to report the bug to the developers of the software)
-2. Bug 2: ...
-
-$$*TODO* if you did not detect the bug, you should delete this section$$  
