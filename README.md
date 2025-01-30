@@ -2,7 +2,7 @@
 This is a repository for the system-testing assignment of the Software Quality Engineering course at the [Ben-Gurion University](https://in.bgu.ac.il/), Israel.
 
 ## Assignment Description
-In this assignment, we tested an open-source software called PrestaShop(https://address-of-the-project.com).
+In this assignment, we tested an open-source software called [PrestaShop](https://prestashop.com/).
 
 PrestaShop is a popular open-source platform that allows users to create and manage online stores. It provides interface for administrators to manage products, categories, orders, and customers. Additionally, it includes a customer-facing store where users can browse products, add them to the cart, and complete purchases.
 
