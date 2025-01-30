@@ -14,19 +14,16 @@ To install PrestaShop and set up the testing environment:
 git clone https://github.com/PrestaShop/PrestaShop.git
 cd PrestaShop
 ```
-2. Set up a web server with PHP (e.g., using XAMPP or Docker).
+2. Set up a web server with PHP (e.g. using XAMPP).
 
 3. Create a MySQL database and configure PrestaShop to use it.
 
 4. Install PrestaShop by following the setup wizard.
 
-5. Install Selenium Server to run automated tests:
-```
-npm install -g selenium-standalone
-selenium-standalone install
-selenium-standalone start
-```
-6. Ensure Graphviz is installed for Provengo test model visualization.
+5. Install the desired ChromeDriver from this [link](https://developer.chrome.com/docs/chromedriver/downloads?hl=he).
+   The ChromeDriver should be compatible to your current chrome version.
+
+6. Add to the pom.xml file dependencies for Cucumber and Selenium.
 
 ## What we tested
 We tested the product management and purchase workflow module. We chose to test the following user stories: 
