@@ -21,7 +21,7 @@ cd PrestaShop
 4. Install PrestaShop by following the setup wizard.
 
 5. Install the desired ChromeDriver from this [link](https://developer.chrome.com/docs/chromedriver/downloads?hl=he).
-   The ChromeDriver should be compatible to your current chrome version.
+   The ChromeDriver should be compatible to your current Chrome browser version.
 
 6. Add to the pom.xml file dependencies for Cucumber and Selenium.
 
