@@ -2,31 +2,46 @@
 This is a repository for the system-testing assignment of the Software Quality Engineering course at the [Ben-Gurion University](https://in.bgu.ac.il/), Israel.
 
 ## Assignment Description
-In this assignment, we tested an open-source software called [$$*TODO* software name$$](https://address-of-the-project.com).
+In this assignment, we tested an open-source software called PrestaShop(https://address-of-the-project.com).
 
-$$*TODO* Add some general description about the software$$
+PrestaShop is a popular open-source platform that allows users to create and manage online stores. It provides interface for administrators to manage products, categories, orders, and customers. Additionally, it includes a customer-facing store where users can browse products, add them to the cart, and complete purchases.
 
 ## Installation
-$$*TODO* Write instructions on how to install the software and prepare the testing environment$$
+To install PrestaShop and set up the testing environment:
+
+1. Clone the PrestaShop repository:
+```
+git clone https://github.com/PrestaShop/PrestaShop.git
+cd PrestaShop
+```
+2. Set up a web server with PHP (e.g., using XAMPP or Docker).
+
+3. Create a MySQL database and configure PrestaShop to use it.
+
+4. Install PrestaShop by following the setup wizard.
+
+5. Install Selenium Server to run automated tests:
+```
+npm install -g selenium-standalone
+selenium-standalone install
+selenium-standalone start
+```
+6. Ensure Graphviz is installed for Provengo test model visualization.
 
 ## What we tested
-$$*TODO* Add a description of the module and the user stories that you chose to test.
-For example, in the case of the Moodle example, you can write something like this:
+We tested the product management and purchase workflow module. We chose to test the following user stories: 
 
-We tested the quiz module that allows for creating and taking quizzes. We chose to test the following user stories: 
+*User story:* User buys an item from the store
 
-*User story:* A teacher adds a new quiz to the course with two yes/no questions
+*Preconditions:* A user is logged into the PrestaShop store and adds an item to their shopping cart.
 
-*Preconditions:* There is a course with a teacher
+*Expected outcome:* The product purchase is successfully confirmed.
 
-*Expected outcome:* The quiz is added to the course.
+*User story:* Admin deletes an item from the store and user can't buy it.
 
-*User story:* A students attempts a quiz and answers correctly.
+*Preconditions:* An admin and a user are logged into the PrestaShop store and the user has added the item to their shopping cart.
 
-*Preconditions:* There is a course with a quiz with two yes/no questions and the quiz grade is calculated automatically and the grade is visible to the students upon submission.
-
-*Expected outcome:* The student receives 100.
-$$
+*Expected outcome:* The user should not be able to purchase the deleted item.
 
 ## How we tested
 We used two different testing methods:
@@ -36,7 +51,7 @@ We used two different testing methods:
 Each of the testing methods is elaborated in its own directory. 
 
 ## Results
-Update all README.md files (except for d-e, see Section 1). Specifically, replace all $$*TODO*…$$ according to the instructions inside the $$.
+We conducted tests using both Cucumber and Provengo. The generated test suites covered the primary interactions of the selected user stories. The tests are documented in the corresponding directories.
 
 ## Detected Bugs
 We detected the following bugs:
